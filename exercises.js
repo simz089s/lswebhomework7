@@ -1,5 +1,13 @@
 //Do not change any of the function names
 
+// returnLast() , contains() , makeCat()
+
+/* Feynman Writing Prompts
+ * Array : Like an ordered set of boxes stuck in a line or bookshelf with each case containing something like a value or an object.
+ * Object : Something that has certain properties and ways to use it. Like a ball has a shape, a volume, a 'bounciness', a color, etc. which define it and it can do certain things like get thrown, bounce, etc.
+ * Method : Something that you can do or make do to an object, such as transform the color of a ball object to something else.
+ */
+
 function getBiggest(x, y) {
   //x and y are integers.  Return the larger integer
   //if they are the same return either one
@@ -126,25 +134,41 @@ function wordsToSentence(words) {
 function contains(arr, item) {
   //check to see if item is inside of arr
   //return true if it is, otherwise return false
+  var isContained = false;
   arr.forEach( function(element) {
-    if (element == item) { return true; }
+    if (element === item) {
+      isContained = true;
+      return isContained;
+    }
   });
-  return false;
+  return isContained;
 }
 
 function addNumbers(numbers) {
   //numbers is an array of integers.
   //add all of the integers and return the value
+  var sum = 0;
+  numbers.forEach( function(element) {
+    sum += element;
+  });
+  return sum;
 }
 
 function averageTestScore(testScores) {
   //testScores is an array.  Iterate over testScores and compute the average.
   //return the average
+  var sum = 0;
+  testScores.forEach( function(element) {
+    sum += element;
+  });
+  return sum / testScores.length;
+  
 }
 
 function largestNumber(numbers) {
   //numbers is an array of integers
   //return the largest integer
+  return Math.max.apply(null, numbers);
 }
 
 function makeCat(name, age) {
@@ -152,18 +176,27 @@ function makeCat(name, age) {
   //add an age property to the object with the value set to the age argument
   //add a method called meow that returns the string 'Meow!'
   //return the object
+  var cat = {
+    name : name,
+    age : age,
+    meow : function() { return 'Moew!'; }
+  };
+  return cat;
 }
 
 function addProperty(object, property) {
   //add the property to the object with a value of null
   //return the object
   //note: the property name is NOT 'property'.  The name is the value of the argument called property (a string)
+  object[property] = null;
+  return object;
 }
 
 function invokeMethod(object, method) {
   //method is a string that contains the name of a method on the object
   //invoke this method
   //nothing needs to be returned
+  
 }
 
 function multiplyMysteryNumberByFive(mysteryNumberObject) {
