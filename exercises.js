@@ -1,6 +1,6 @@
 //Do not change any of the function names
 
-// returnLast() , contains() , makeCat(), addCalculateDiscountPriceMethod()
+// contains() , makeCat()
 
 /* Feynman Writing Prompts
  * Array : Like an ordered set of boxes stuck in a line or bookshelf with each case containing something like a value or an object.
@@ -29,7 +29,7 @@ function greeting(language) {
 function isTenOrFive(num) {
   //return true if num is 10 or 5
   //otherwise return false
-  if (num == 10 || num == 5) { return true; }
+  if (num === 10 || num === 5) { return true; }
   return false;
 }
 
@@ -87,7 +87,7 @@ function returnLast(arr) {
   // version 1
   // return arr[arr.length - 1];
   // version 2
-  return arr.slice(-1)[0];
+  return arr.slice(-1)[0]; // return arr.pop();
 }
 
 function getArrayLength(arr) {
@@ -134,14 +134,8 @@ function wordsToSentence(words) {
 function contains(arr, item) {
   //check to see if item is inside of arr
   //return true if it is, otherwise return false
-  var isContained = false;
-  arr.forEach( function(element) {
-    if (element === item) {
-      isContained = true;
-      return isContained;
-    }
-  });
-  return isContained;
+  if (arr.includes(item)) { return true; }
+  return false;
 }
 
 function addNumbers(numbers) {
@@ -176,21 +170,17 @@ function makeCat(name, age) {
   //add an age property to the object with the value set to the age argument
   //add a method called meow that returns the string 'Meow!'
   //return the object
-  /*
   var cat = {
-    name : name,
-    age : age,
-    meow : function() { return 'Moew!'; }
+    name : name
   };
-  return cat;
-  */
+  /*
   function cat(name) {
     this.name = name;
   }
+  */
   cat.age = age;
-  cat.prototype.meow = function() { return 'Moew!'; };
-  var aCat = new cat(name);
-  return aCat;
+  cat.meow = function() { return 'Moew!'; };
+  return cat;
 }
 
 function addProperty(object, property) {
@@ -310,10 +300,11 @@ function addCalculateDiscountPriceMethod(storeItem) {
   //price -> 20
   //discountPercentage -> .2
   //discountPrice = 20 - (20 * .2)
-  storeItem.prototype.calculateDiscountPrice = function() {
+  storeItem.calculateDiscountPrice = function() {
     var discount = this.price * this.discountPercentage;
     return this.price - discount;
   };
+  return storeItem;
 }
 
 
