@@ -1,7 +1,5 @@
 //Do not change any of the function names
 
-// contains() , makeCat()
-
 /* Feynman Writing Prompts
  * Array : Like an ordered set of boxes stuck in a line or bookshelf with each case containing something like a value or an object.
  * Object : Something that has certain properties and ways to use it. Like a ball has a shape, a volume, a 'bounciness', a color, etc. which define it and it can do certain things like get thrown, bounce, etc.
@@ -46,7 +44,7 @@ function isInteger(num) {
   //-10 -> true
   //otherwise return false
   //hint: you can solve this using Math.floor
-  if (num == Math.trunc(num)) { return true; }
+  if (num === Math.trunc(num)) { return true; }
   return false;
   // or use Math.floor with +1 for negative cases
 }
@@ -170,9 +168,7 @@ function makeCat(name, age) {
   //add an age property to the object with the value set to the age argument
   //add a method called meow that returns the string 'Meow!'
   //return the object
-  var cat = {
-    name : name
-  };
+  var cat = { name : name };
   /*
   function cat(name) {
     this.name = name;
